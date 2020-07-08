@@ -8,13 +8,11 @@ import requests
 import lxml
 import os
 
-#IMPORT WITH STDOUT REDIRECTION
-#FIX STARTUP PYGAME HELLO MESSAGE
-#THANKS @Mad Physicist FROM STACK OVERFLOW
-import contextlib
-with contextlib.redirect_stdout(None):
-    from moviepy.editor import *
-    import moviepy.editor as mp
+#SUPPRESS PYGAME WELCOME MESSAGE
+#THANKS @Eduardo Dalapicola HERE: https://stackoverflow.com/a/55769463
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+from moviepy.editor import *
+import moviepy.editor as mp
 
 import imageio
 imageio.plugins.ffmpeg.download()
